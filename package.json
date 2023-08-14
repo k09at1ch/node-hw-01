@@ -1,0 +1,23 @@
+{
+  "name": "homework-01",
+  "version": "18.16.0",
+  "description": "Goit node homework N1",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/k09at1ch/node-hw-01.git"
+  },
+  "keywords": [
+    "web",
+    "application"
+  ],
+  "author": "k09at1ch",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/k09at1ch/node-hw-01/issues"
+  },
+  "homepage": "https://github.com/k09at1ch/node-hw-01#readme"
+}
