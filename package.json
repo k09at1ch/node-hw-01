@@ -4,7 +4,8 @@
   "description": "Goit node homework N1",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +23,8 @@
   "homepage": "https://github.com/k09at1ch/node-hw-01#readme",
   "dependencies": {
     "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }

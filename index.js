@@ -11,7 +11,7 @@ function invokeAction({ action, id, name, email, phone }) {
           console.error(err);
           return;
         }
-        console.log(contacts);
+        console.table(contacts);
       });
       break;
 
@@ -41,7 +41,7 @@ function invokeAction({ action, id, name, email, phone }) {
           console.error(err);
           return;
         }
-        console.log("Contact removed:", removedContact);
+       
       });
       break;
 

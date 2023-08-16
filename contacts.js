@@ -47,8 +47,8 @@ function removeContact(contactId, callback) {
     const contactIndex = contacts.findIndex(contact => contact.id === contactId);
 
     if (contactIndex === -1) {
-      console.log("Contact not found");
-      callback(null, "Contact not found");
+      console.log(null);
+      callback(null);
       return;
     }
 
