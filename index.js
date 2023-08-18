@@ -3,46 +3,46 @@ const contacts = require('./contacts');
 
 const argv = yargs.argv;
 
-function invokeAction({ action, id, name, email, phone }) {
+async function invokeAction({ action, id, name, email, phone }) {
   switch (action) {
     case 'list':
-      contacts.listContacts((err, contacts) => {
-        if (err) {
-          console.error(err);
-          return;
-        }
-        console.table(contacts);
-      });
+      try {
+        const contactList = await contacts.listContacts();
+        console.table(contactList);
+      } catch (err) {
+        console.error(err);
+      }
       break;
 
     case 'get':
-      contacts.getContactById(id, (err, contact) => {
-        if (err) {
-          console.error(err);
-          return;
-        }
+      try {
+        const contact = await contacts.getContactById(id);
         console.log(contact);
-      });
+      } catch (err) {
+        console.error(err);
+      }
       break;
 
     case 'add':
-      contacts.addContact(name, email, phone, (err, newContact) => {
-        if (err) {
-          console.error(err);
-          return;
-        }
+      try {
+        const newContact = await contacts.addContact(name, email, phone);
         console.log("New contact added:", newContact);
-      });
+      } catch (err) {
+        console.error(err);
+      }
       break;
 
     case 'remove':
-      contacts.removeContact(id, (err, removedContact) => {
-        if (err) {
-          console.error(err);
-          return;
+      try {
+        const removedContact = await contacts.removeContact(id);
+        if (removedContact === null) {
+          console.log(null);
+        } else {
+          console.log( removedContact);
         }
-       
-      });
+      } catch (err) {
+        console.error(err);
+      }
       break;
 
     default:
